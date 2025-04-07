@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Happy Rose Day 🌹</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Indie+Flower&family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .container {
+      width: 300px;
+      height: 600px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .glass {
+      width: 80px;
+      height: 200px;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 40px 40px 10px 10px;
+      border: 2px solid #fff;
+      position: relative;
+      margin-top: auto;
+    }
+
+    .shine {
+      width: 20px;
+      height: 80px;
+      background: rgba(255, 255, 255, 0.3);
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      border-radius: 50px;
+    }
+
+    .thorns div,
+    .leaves div,
+    .petals div {
+      width: 10px;
+      height: 20px;
+      background-color: #388e3c;
+      margin: 2px;
+      border-radius: 10px;
+    }
+
+    .thorns, .leaves, .petals {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin: 10px 0;
+    }
+
+    .petals div {
+      background-color: #e91e63;
+      width: 20px;
+      height: 40px;
+      border-radius: 50% 50% 0 0;
+      margin: 0 4px;
+      transform: rotate(-15deg);
+      animation: bloom 3s infinite alternate ease-in-out;
+    }
+
+    @keyframes bloom {
+      0% { transform: scale(1) rotate(-15deg); }
+      100% { transform: scale(1.1) rotate(-5deg); }
+    }
+
+    .text {
+      text-align: center;
+      color: #fff;
+      margin-top: 2em;
+      font-size: 1.2em;
+      font-family: 'Great Vibes', cursive;
+      animation: fadeInText 2s ease-in-out;
+    }
+
+    .text h2 {
+      font-size: 1.5em;
+      font-family: 'Indie Flower', cursive;
+      color: #fff;
+      text-shadow: 0 0 5px #00000030;
+    }
+
+    .text a {
+      display: inline-block;
+      margin-top: 1em;
+      padding: 10px 20px;
+      background-color: #d81b60;
+      color: white;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1em;
+      transition: 0.3s ease;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    .text a:hover {
+      background-color: #ad1457;
+    }
+
+    /* Optional: floating hearts */
+    .heart {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: url('https://i.imgur.com/W9bF4Wt.png') no-repeat center/contain;
+      animation: floatHeart 8s linear infinite;
+    }
+
+    @keyframes floatHeart {
+      0% {
+        transform: translateY(100vh) scale(0.5);
+        opacity: 0;
+      }
+      100% {
+        transform: translateY(-100vh) scale(1);
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Optional hearts -->
+  <div class="heart" style="left: 10%; animation-delay: 1s;"></div>
+  <div class="heart" style="left: 40%; animation-delay: 2s;"></div>
+  <div class="heart" style="left: 70%; animation-delay: 3s;"></div>
+
+  <div class="container">
+    <div class="glass">
+      <div class="shine"></div>
+    </div>
+    <div class="thorns">
+      <div></div><div></div><div></div><div></div>
+    </div>
+    <div class="leaves">
+      <div></div><div></div><div></div><div></div>
+    </div>
+    <div class="petals">
+      <div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+    </div>
+    <div class="text">
+      <h2>Your smile is as beautiful as this rose 🌹<br><br>
+      I have something special for you.<br>
+      <a href="new.html">Click Here</a>
+      </h2>
+    </div>
+  </div>
+
+</body>
+</html>

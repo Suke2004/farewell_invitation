@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Farewell Invitation 🌹</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      height: 100vh;
+      background: linear-gradient(135deg, #ffd3e0, #fff1f6);
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    .hearts {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      overflow: hidden;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .hearts span {
+      position: absolute;
+      width: 20px; height: 20px;
+      background: url('https://i.imgur.com/W9bF4Wt.png') no-repeat center/contain;
+      animation: float 10s linear infinite;
+      opacity: 0.5;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(100vh) rotate(0); opacity: 0; }
+      100% { transform: translateY(-10vh) rotate(360deg); opacity: 1; }
+    }
+
+    .container {
+      position: relative;
+      z-index: 2;
+      max-width: 700px;
+      margin: 5em auto 2em;
+      background: rgba(255,255,255,0.25);
+      backdrop-filter: blur(20px);
+      padding: 3em 2em;
+      border-radius: 30px;
+      box-shadow: 0 0 30px rgba(255, 105, 180, 0.4);
+      border: 2px solid rgba(255, 182, 193, 0.5);
+      animation: fadeInCard 1.2s ease-out;
+    }
+
+    h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 3.5em;
+      text-align: center;
+      color: #b0004c;
+      text-shadow: 0 0 12px white;
+      margin-bottom: 0.5em;
+    }
+
+    .countdown {
+      text-align: center;
+      font-size: 1.3em;
+      margin-bottom: 1em;
+      color: #880e4f;
+      font-weight: bold;
+    }
+
+    .message, .form-container {
+      text-align: center;
+      font-size: 1.2em;
+      margin: 1.5em 0;
+      color: #4a4a4a;
+    }
+
+    .details {
+      background: #ffeef5;
+      border-radius: 20px;
+      padding: 1.5em;
+      margin-top: 1em;
+      font-size: 1.1em;
+      color: #880e4f;
+      box-shadow: 0 0 20px rgba(255, 192, 203, 0.3);
+    }
+
+    .carousel {
+      display: flex;
+      overflow-x: auto;
+      gap: 1em;
+      padding: 1em 0;
+      scroll-snap-type: x mandatory;
+    }
+
+    .carousel img {
+      width: 100%;
+      max-width: 300px;
+      border-radius: 20px;
+      scroll-snap-align: center;
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    }
+
+    .form-container input, .form-container textarea {
+      width: 100%;
+      padding: 0.7em;
+      margin-top: 1em;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+      font-family: inherit;
+    }
+
+    .form-container button {
+      margin-top: 1em;
+      padding: 0.7em 2em;
+      border: none;
+      border-radius: 20px;
+      background-color: #d81b60;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .form-container button:hover {
+      background-color: #ad1457;
+    }
+
+    footer {
+      text-align: center;
+      color: #b0004c;
+      margin: 2em 0;
+      font-weight: 500;
+    }
+
+    #musicBtn {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 5;
+      padding: 0.6em 1.2em;
+      border: none;
+      border-radius: 30px;
+      background: #e91e63;
+      color: white;
+      cursor: pointer;
+      font-weight: bold;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+
+    @keyframes fadeInCard {
+      from { transform: translateY(40px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    @media screen and (max-width: 768px) {
+      h1 { font-size: 2.5em; }
+      .container { padding: 2em 1.5em; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 🎵 Music Toggle Button -->
+  <button id="musicBtn">Play Music</button>
+  <audio id="bgMusic" loop>
+    <source src="https://www.bensound.com/bensound-music/bensound-love.mp3" type="audio/mpeg" />
+  </audio>
+
+  <!-- 💖 Animated Hearts -->
+  <div class="hearts">
+    <span style="left: 10%; animation-delay: 0s;"></span>
+    <span style="left: 25%; animation-delay: 2s;"></span>
+    <span style="left: 40%; animation-delay: 4s;"></span>
+    <span style="left: 55%; animation-delay: 1s;"></span>
+    <span style="left: 70%; animation-delay: 3s;"></span>
+    <span style="left: 85%; animation-delay: 2.5s;"></span>
+    <span style="left: 15%; animation-delay: 5s;"></span>
+    <span style="left: 30%; animation-delay: 6s;"></span>
+    <span style="left: 50%; animation-delay: 7s;"></span>
+    <span style="left: 75%; animation-delay: 4.5s;"></span>
+  </div>
+
+  <!-- 💌 Main Container -->
+  <div class="container">
+    <h1>Farewell, Seniors 💐</h1>
+
+    <!-- ⏳ Countdown -->
+    <div class="countdown" id="countdown">Countdown loading...</div>
+
+    <!-- 💬 Message -->
+    <div class="message">
+      You taught us, guided us, and inspired us. Now it’s time to celebrate you with all our love. 💖
+    </div>
+
+    <!-- 📅 Event Details -->
+    <div class="details">
+      ✨ <strong>Farewell Celebration</strong> ✨<br><br>
+      📅 <b>Date:</b> Saturday, April 20, 2025<br>
+      🕔 <b>Time:</b> 5:00 PM onwards<br>
+      📍 <b>Venue:</b> College Auditorium, Main Campus
+    </div>
+
+    <!-- 🖼️ Carousel -->
+    <div class="carousel">
+      <img src="group.jpg" alt="Memory 1" />
+      <img src="group.jpg" alt="Memory 2" />
+      <img src="group.jpg" alt="Memory 3" />
+    </div>
+
+  <!-- 💌 Footer -->
+  <footer>
+    With endless love,<br>Your Juniors 💞
+  </footer>
+
+  <!-- 🧠 Scripts -->
+  <script>
+    // Music toggle
+    const music = document.getElementById("bgMusic");
+    const musicBtn = document.getElementById("musicBtn");
+    let isPlaying = false;
+
+    musicBtn.onclick = () => {
+      if (!isPlaying) {
+        music.play();
+        musicBtn.textContent = "Pause Music";
+      } else {
+        music.pause();
+        musicBtn.textContent = "Play Music";
+      }
+      isPlaying = !isPlaying;
+    };
+
+    // Countdown
+    const countdownEl = document.getElementById("countdown");
+    const eventDate = new Date("2025-04-20T17:00:00");
+
+    function updateCountdown() {
+      const now = new Date();
+      const diff = eventDate - now;
+
+      if (diff <= 0) {
+        countdownEl.textContent = "The celebration has begun! 🎉";
+        return;
+      }
+
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      const mins = Math.floor((diff / (1000 * 60)) % 60);
+      const secs = Math.floor((diff / 1000) % 60);
+
+      countdownEl.textContent = `⏳ Only ${days}d ${hours}h ${mins}m ${secs}s left!`;
+    }
+
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+  </script>
+
+</body>
+</html>
