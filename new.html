@@ -35,12 +35,12 @@
 
   <!-- 🌸 Card -->
   <div class="container">
-    <h1>Farewell, Seniors 💐</h1>
+    <h1>Happy Farewell, Seniors 💐</h1>
 
     <div class="countdown" id="countdown">Countdown loading...</div>
 
     <div class="message">
-      You gave four years, your heart and might💖, Guided us through dark and light. Now as you leave, we have something🌹 for you, A token🎁 of love, forever true. ✨
+      You gave four years, your heart and💖 might, Guided us through dark and light. Now as you leave, we have something for you🌹, A token🎁 of love, forever true. 💖✨
     </div>
 
     <div class="details">
@@ -55,16 +55,35 @@
           <div class="swiper-slide"><img src="public/2.jpg" alt="Memory 2" /></div>
           <div class="swiper-slide"><img src="public/3.jpg" alt="Memory 3" /></div>
           <div class="swiper-slide"><img src="public/4.jpg" alt="Memory 1" /></div>
-          <div class="swiper-slide"><img src="public/5.jpg" alt="Memory 2" /></div>
-          <div class="swiper-slide"><img src="public/6.jpg" alt="Memory 3" /></div>
           <div class="swiper-slide"><img src="public/7.jpg" alt="Memory 1" /></div>
           <div class="swiper-slide"><img src="public/8.jpg" alt="Memory 2" /></div>
           <div class="swiper-slide"><img src="public/9.jpg" alt="Memory 3" /></div>
+          <div class="swiper-slide"><img src="public/10.jpg" alt="Memory 1" /></div>
+          <div class="swiper-slide"><img src="public/11.jpg" alt="Memory 2" /></div>
+          <div class="swiper-slide"><img src="public/12.jpg" alt="Memory 3" /></div>
           <div class="swiper-slide"><img src="public/13.jpg" alt="Memory 1" /></div>
           <div class="swiper-slide"><img src="public/14.jpg" alt="Memory 2" /></div>
+          <div class="swiper-slide"><img src="public/6.jpg" alt="Memory 3" /></div>
           <div class="swiper-slide"><img src="public/15.jpg" alt="Memory 3" /></div>
           <div class="swiper-slide"><img src="public/16.jpg" alt="Memory 1" /></div>
           <div class="swiper-slide"><img src="public/17.jpg" alt="Memory 2" /></div>
+          <div class="swiper-slide"><img src="public/18.jpg" alt="Memory 1" /></div>
+          <div class="swiper-slide"><img src="public/5.jpg" alt="Memory 2" /></div>
+          <div class="swiper-slide"><img src="public/19.jpg" alt="Memory 2" /></div>
+          <div class="swiper-slide"><img src="public/20.jpg" alt="Memory 3" /></div>
+          <div class="swiper-slide"><img src="public/21.jpg" alt="Memory 1" /></div>
+          <div class="swiper-slide"><img src="public/22.jpg" alt="Memory 2" /></div>
+          <div class="swiper-slide"><img src="public/23.jpg" alt="Memory 3" /></div>
+          <div class="swiper-slide"><img src="public/24.jpg" alt="Memory 1" /></div>
+          <div class="swiper-slide"><img src="public/25.jpg" alt="Memory 2" /></div>
+          <div class="swiper-slide"><img src="public/26.jpg" alt="Memory 3" /></div>
+          <div class="swiper-slide"><img src="public/27.jpg" alt="Memory 1" /></div>
+          <div class="swiper-slide"><img src="public/28.jpg" alt="Memory 2" /></div>
+          <div class="swiper-slide"><img src="public/29.jpg" alt="Memory 3" /></div>
+          <div class="swiper-slide"><img src="public/30.jpg" alt="Memory 1" /></div>
+          <div class="swiper-slide"><img src="public/31.jpg" alt="Memory 1" /></div>
+          <div class="swiper-slide"><img src="public/32.jpg" alt="Memory 3" /></div>
+          <div class="swiper-slide"><img src="public/33.jpg" alt="Memory 1" /></div>
         </div>
     <div class="swiper-pagination"></div>
   </div>
@@ -173,22 +192,30 @@ function animate() {
 animate();
 
   // Initialize Swiper
-const swiper = new Swiper(".mySwiper", {
+  const swiper = new Swiper(".mySwiper", {
   loop: true,
-  autoplay: { delay: 2500, disableOnInteraction: false },
-  pagination: { el: ".swiper-pagination", clickable: true },
+  autoplay: {
+    delay: 3000,
+    disableOnInteraction: false,
+  },
+  speed: 800,
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
   effect: "coverflow",
   grabCursor: true,
   centeredSlides: true,
   slidesPerView: "auto",
   coverflowEffect: {
-    rotate: 30,
+    rotate: 50,
     stretch: 0,
-    depth: 100,
-    modifier: 1,
+    depth: 150,
+    modifier: 1.2,
     slideShadows: true,
   },
 });
+
   </script>
 
 </body>
