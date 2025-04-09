@@ -40,7 +40,7 @@
     <div class="countdown" id="countdown">Countdown loading...</div>
 
     <div class="message">
-      You gave four years, your heart and might💖, Guided us through dark and light. Now as you leave, we have something🌹 for you, A token🎁 of love, forever true. ✨
+      You gave four years, your heart and💖 might, Guided us through dark and light. Now as you leave, we have something for you🌹, A token🎁 of love, forever true. 💖✨
     </div>
 
     <div class="details">
@@ -173,22 +173,30 @@ function animate() {
 animate();
 
   // Initialize Swiper
-const swiper = new Swiper(".mySwiper", {
+  const swiper = new Swiper(".mySwiper", {
   loop: true,
-  autoplay: { delay: 2500, disableOnInteraction: false },
-  pagination: { el: ".swiper-pagination", clickable: true },
+  autoplay: {
+    delay: 3000,
+    disableOnInteraction: false,
+  },
+  speed: 800,
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
   effect: "coverflow",
   grabCursor: true,
   centeredSlides: true,
   slidesPerView: "auto",
   coverflowEffect: {
-    rotate: 30,
+    rotate: 50,
     stretch: 0,
-    depth: 100,
-    modifier: 1,
+    depth: 150,
+    modifier: 1.2,
     slideShadows: true,
   },
 });
+
   </script>
 
 </body>
