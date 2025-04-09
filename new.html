@@ -16,11 +16,11 @@
 
 </head>
 <body>
-
+  <canvas id="cursorTrail"></canvas>
   <!-- 🎵 Music Toggle Button -->
   <button id="musicBtn"><i class="fas fa-play"></i> Play Music</button>
   <audio id="bgMusic" loop>
-    <source src="https://www.bensound.com/bensound-music/bensound-love.mp3" type="audio/mpeg" />
+    <source src="public/see-you-again.mp3" type="audio/mpeg" />
   </audio>
 
 <!-- ❤️ Floating Hearts -->
@@ -70,11 +70,9 @@
           <div class="swiper-slide"><img src="public/15.jpg" alt="Memory 3" /></div>
           <div class="swiper-slide"><img src="public/16.jpg" alt="Memory 1" /></div>
           <div class="swiper-slide"><img src="public/17.jpg" alt="Memory 2" /></div>
-          <div class="swiper-slide"><img src="public/18.jpg" alt="Memory 3" /></div>
         </div>
     <div class="swiper-pagination"></div>
   </div>
-  <canvas class = "cursorTrail" id="cursorTrail"></canvas>
 
     <footer>
       With endless love,<br>Your Juniors 💞
@@ -134,44 +132,49 @@
   }, 800);
 
   const canvas = document.getElementById("cursorTrail");
-  const ctx = canvas.getContext("2d");
-  let particles = [];
+const ctx = canvas.getContext("2d");
+let particles = [];
 
-  function resizeCanvas() {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+function resizeCanvas() {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+}
+window.addEventListener('resize', resizeCanvas);
+resizeCanvas();
+
+document.addEventListener("mousemove", (e) => {
+  for (let i = 0; i < 3; i++) {
+    particles.push({
+      x: e.clientX,
+      y: e.clientY,
+      alpha: 1,
+      size: Math.random() * 4 + 1,
+      speedX: (Math.random() - 0.5) * 1.5,
+      speedY: (Math.random() - 0.5) * 1.5,
+    });
   }
-  window.addEventListener('resize', resizeCanvas);
-  resizeCanvas();
+});
 
-  document.addEventListener("mousemove", e => {
-    for (let i = 0; i < 3; i++) {
-      particles.push({
-        x: e.clientX,
-        y: e.clientY,
-        alpha: 1,
-        size: Math.random() * 4 + 1,
-        speedX: (Math.random() - 0.5) * 2,
-        speedY: (Math.random() - 0.5) * 2,
-      });
-    }
+function animate() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  particles = particles.filter((p) => {
+    p.x += p.speedX;
+    p.y += p.speedY;
+    p.alpha -= 0.02;
+
+    if (p.alpha <= 0) return false;
+
+    ctx.beginPath();
+    ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+    ctx.fillStyle = `rgba(255, 182, 193, ${p.alpha})`;
+    ctx.fill();
+    return true;
   });
 
-  function animate() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    particles.forEach((p, i) => {
-      p.x += p.speedX;
-      p.y += p.speedY;
-      p.alpha -= 0.02;
-      if (p.alpha <= 0) particles.splice(i, 1);
-      ctx.beginPath();
-      ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(255, 182, 193, ${p.alpha})`;
-      ctx.fill();
-    });
-    requestAnimationFrame(animate);
-  }
-  animate();
+  requestAnimationFrame(animate);
+}
+animate();
+
   // Initialize Swiper
 const swiper = new Swiper(".mySwiper", {
   loop: true,
