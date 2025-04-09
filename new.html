@@ -23,6 +23,7 @@
 <div class="heart"></div>
 <div class="heart"></div>
 <div class="heart"></div>
+
   <canvas id="cursorTrail"></canvas>
   <!-- 🎵 Music Toggle Button -->
   <button id="musicBtn"><i class="fas fa-play"></i> Play Music</button>
@@ -146,6 +147,7 @@ document.addEventListener("mousemove", (e) => {
       size: Math.random() * 4 + 1,
       speedX: (Math.random() - 0.5) * 1.5,
       speedY: (Math.random() - 0.5) * 1.5,
+      emoji: Math.random() > 0.5 ? "❤️" : "✨"
     });
   }
 });
@@ -159,10 +161,10 @@ function animate() {
 
     if (p.alpha <= 0) return false;
 
-    ctx.beginPath();
-    ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-    ctx.fillStyle = `rgba(255, 182, 193, ${p.alpha})`;
-    ctx.fill();
+    ctx.globalAlpha = p.alpha;
+    ctx.font = `${p.size}px serif`;
+    ctx.fillText(p.emoji, p.x, p.y);
+    ctx.globalAlpha = 1;
     return true;
   });
 
