@@ -54,7 +54,7 @@
           <div class="swiper-slide"><img src="public/1.jpg" alt="Memory 1" /></div>
           <div class="swiper-slide"><img src="public/2.jpg" alt="Memory 2" /></div>
           <div class="swiper-slide"><img src="public/3.jpg" alt="Memory 3" /></div>
-          <div class="swiper-slide"><img src="public/4.jpg" alt="Memory 1" /></div>
+          <div class="swiper-slide"><img src="public/5.jpg" alt="Memory 1" /></div>
           <div class="swiper-slide"><img src="public/7.jpg" alt="Memory 1" /></div>
           <div class="swiper-slide"><img src="public/8.jpg" alt="Memory 2" /></div>
           <div class="swiper-slide"><img src="public/9.jpg" alt="Memory 3" /></div>
@@ -81,7 +81,6 @@
           <div class="swiper-slide"><img src="public/28.jpg" alt="Memory 2" /></div>
           <div class="swiper-slide"><img src="public/29.jpg" alt="Memory 3" /></div>
           <div class="swiper-slide"><img src="public/30.jpg" alt="Memory 1" /></div>
-          <div class="swiper-slide"><img src="public/31.jpg" alt="Memory 1" /></div>
           <div class="swiper-slide"><img src="public/32.jpg" alt="Memory 3" /></div>
           <div class="swiper-slide"><img src="public/33.jpg" alt="Memory 1" /></div>
         </div>
@@ -99,20 +98,34 @@
       function scrollToTop() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }
-    const music = document.getElementById("bgMusic");
-    const musicBtn = document.getElementById("musicBtn");
-    let isPlaying = false;
+  const music = document.getElementById("bgMusic");
+  const musicBtn = document.getElementById("musicBtn");
 
-    musicBtn.onclick = () => {
-      if (!isPlaying) {
-        music.play();
+  // Try to autoplay when page loads
+  window.addEventListener("DOMContentLoaded", async () => {
+    try {
+      await music.play();
+      musicBtn.innerHTML = `<i class="fas fa-pause"></i> Pause Music`;
+    } catch (err) {
+      // Autoplay likely blocked by browser until interaction
+      musicBtn.innerHTML = `<i class="fas fa-play"></i> Play Music`;
+    }
+  });
+
+  musicBtn.onclick = async () => {
+    if (music.paused) {
+      try {
+        await music.play();
         musicBtn.innerHTML = `<i class="fas fa-pause"></i> Pause Music`;
-      } else {
-        music.pause();
-        musicBtn.innerHTML = `<i class="fas fa-play"></i> Play Music`;
+      } catch (err) {
+        console.log("User gesture required to play audio");
       }
-      isPlaying = !isPlaying;
-    };
+    } else {
+      music.pause();
+      musicBtn.innerHTML = `<i class="fas fa-play"></i> Play Music`;
+    }
+  };
+
 
     const countdownEl = document.getElementById("countdown");
     const eventDate = new Date("2025-04-12T12:00:00");
